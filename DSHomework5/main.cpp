@@ -96,18 +96,21 @@ public:
 };
 int main(int argc, const char * argv[])
 {
-    int value[3]={1,2,3};
-    ArrayQueue<int> aq(3,value);
+    //int value[3]={1,2,3};
+    ArrayQueue<int> aq(3);
     aq.EnQueue(4);
+    aq.EnQueue(5);
+    aq.EnQueue(6);
+    aq.EnQueue(7);
     int temp;
     while(!aq.IsEmpty())
     {
         aq.DeQueue(temp);
         std::cout<<temp<<std::endl;
     }
-    aq.DeQueue(temp);
+    //aq.DeQueue(temp);
+    /*
     aq.Clear();
-    
     aq.EnQueue(5);
     aq.EnQueue(6);
     aq.EnQueue(7);
@@ -116,5 +119,6 @@ int main(int argc, const char * argv[])
         aq.DeQueue(temp);
         std::cout<<temp<<std::endl;
     }
+     */
     return 0;
 }
