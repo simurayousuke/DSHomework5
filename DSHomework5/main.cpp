@@ -25,6 +25,19 @@ public:
         front=0;
         rear=0;
     }
+    ArrayQueue(int num,T *item)
+    {
+        maxSize=num;
+        queue=new T[maxSize];
+        tag=0;
+        front=0;
+        rear=0;
+        for(int i=0;i<num;i++)
+        {
+            EnQueue(*item);
+            item++;
+        }
+    }
     ~ArrayQueue()
     {
         delete [] queue;
@@ -83,10 +96,8 @@ public:
 };
 int main(int argc, const char * argv[])
 {
-    ArrayQueue<int> aq(3);
-    aq.EnQueue(1);
-    aq.EnQueue(2);
-    aq.EnQueue(3);
+    int value[3]={1,2,3};
+    ArrayQueue<int> aq(3,value);
     aq.EnQueue(4);
     int temp;
     while(!aq.IsEmpty())
